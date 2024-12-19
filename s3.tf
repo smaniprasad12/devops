@@ -24,6 +24,12 @@ resource "aws_s3_bucket_versioning" "five" {
     status = "Enabled"
   }
 }
-
+terraform {
+  backend "s3" {
+    region = "us-east-1"
+    bucket = "ruksar.devops.project.bucket"
+    key    = "prod/terraform.tfstate"
+  }
+}
 
 
