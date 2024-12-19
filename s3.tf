@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "one" {
-  bucket = "ruksar.devops.project.bucket"
+  bucket = "mani.devops.project.bucket"
 }
 
 resource "aws_s3_bucket_ownership_controls" "two" {
@@ -24,3 +24,12 @@ resource "aws_s3_bucket_versioning" "five" {
     status = "Enabled"
   }
 }
+
+terraform {
+  backend "s3" {
+    region = "us-east-1"
+    bucket = "mani.devops.project.bucket"
+    key    = "prod/terraform.tfstate"
+  }
+}
+
