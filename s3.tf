@@ -14,7 +14,7 @@ resource "aws_s3_bucket_acl" "four" {
   depends_on = [aws_s3_bucket.one]  # Direct dependency on the bucket
 
   bucket = aws_s3_bucket.one.id
-  acl    = "private"
+  acl    = "public"
 }
 
 resource "aws_s3_bucket_versioning" "five" {
