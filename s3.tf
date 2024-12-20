@@ -10,12 +10,7 @@ resource "aws_s3_bucket_ownership_controls" "two" {
   }
 }
 
-resource "aws_s3_bucket_acl" "four" {
-  depends_on = [aws_s3_bucket.one]  # Direct dependency on the bucket
 
-  bucket = aws_s3_bucket.one.id
-  acl    = "public"
-}
 
 resource "aws_s3_bucket_versioning" "five" {
   bucket = aws_s3_bucket.one.id
