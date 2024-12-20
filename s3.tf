@@ -18,7 +18,7 @@ resource "aws_s3_bucket_acl" "three" {
 
 
 
-resource "aws_s3_bucket_versioning" "five" {
+resource "aws_s3_bucket_versioning" "three" {
   bucket = aws_s3_bucket.one.id
 
   versioning_configuration {
